@@ -20,6 +20,7 @@ public class ConnectionUtil {
 			try(Connection conn = ConnectionUtil.getConnection()) {
 				System.out.println("connection successful");
 			} catch (SQLException e) {
+				System.out.println("No Connection");
 				e.printStackTrace();
 			}
 			
