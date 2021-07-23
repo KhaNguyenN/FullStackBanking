@@ -6,8 +6,6 @@ public class placeholder {
 		// TODO Auto-generated method stub
 
 		// Test placeholder
-=======
-		//test
 	}
 
 }
