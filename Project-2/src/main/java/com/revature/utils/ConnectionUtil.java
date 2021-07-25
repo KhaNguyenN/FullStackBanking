@@ -27,7 +27,6 @@ public class ConnectionUtil {
 			
 	}
 	
-	
 	//a method called getConnection that returns a Connection object
 	public static Connection getConnection() throws SQLException {
 		//For compatibility with other technologies/frameworks, we'll need to register our Driver
