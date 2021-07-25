@@ -47,8 +47,7 @@ public class ConnectionUtil {
         //String password = "password"; //this will be whatever password you set in postgres (or RDS if you're using that)
 									  //hopefully you just left it as password...
 		
-		
-		//I've successfully hidden my DB credentials in my environment variables
+		//I've successfully hidden my DB credentials in my environment variables 
 		//run -> run configurations -> environment -> add the environment variable key/pairs you want
 		String url = System.getenv("url");
 		String username = System.getenv("username");
