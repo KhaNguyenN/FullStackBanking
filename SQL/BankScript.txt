@@ -1,0 +1,135 @@
+DROP TABLE Customers CASCADE;
+DROP TABLE BankEmployees CASCADE;
+DROP TABLE Checking CASCADE;
+DROP TABLE Savings CASCADE;
+DROP TABLE Creditcards CASCADE;
+DROP TABLE Loans CASCADE;
+
+CREATE TABLE Customers (
+	customerid  SERIAL PRIMARY KEY,  
+	customerusername VARCHAR(50),
+	customerbankpassword VARCHAR(50),
+	customerfirstName VARCHAR(50),
+	customerlastName VARCHAR(50),
+	customeraddress VARCHAR(100),
+	customercity VARCHAR(50),
+	customerstate VARCHAR(2),
+	customerzip INTEGER);
+
+INSERT INTO Customers (customerid,customerusername, customerbankpassword,customerfirstname,customerlastname,
+					customeraddress,customercity,customerstate,customerzip)
+	VALUES (1,'Greglogin','password1','Greg','last','123 Hollywood Blvd','Los Angeles','CA',90001),
+	(2,'Deavenlogin','password2','Deaven','last','321 W. Lake st','Minneapolis','MN',55111),
+	(3,'Nahomlogin','password3','Nahom','last','421 E. Lake st','Saint Paul','MN',55101),
+	(4,'Khalogin','password4','Kha','last','654 Mountain Ave','Denver','CO',80014),
+	(5,'Davidlogin','password5','David','Knutson','905 N. Michigan Ave','Chicago','IL',60007);
+
+SELECT * FROM Customers;
+
+
+CREATE TABLE BankEmployees (
+	employeeid  INTEGER PRIMARY KEY,
+	employeeusername VARCHAR(50),
+	employeebankpassword VARCHAR(50),
+	employeejobtitle VARCHAR(40),
+	employeefirstName VARCHAR(50),
+	employeelastName VARCHAR(50),
+	employeeaddress VARCHAR(50),
+	employeecity VARCHAR(50),
+	employeestate VARCHAR(2),
+	employeezip INTEGER);
+
+INSERT INTO BankEmployees (employee_id,employeeusername, employeebankpassword,employeejobtitle,employeefirstname,employeelastname,
+employeeaddress,employeecity,employeestate,employeezip)
+	VALUES (1,'Gregbanklogin','password1','approving_manager','Greg','last','123 Hollywood Blvd','Los Angeles','CA',90001),
+	(2,'Deavenbanklogin','password2','loan_specialist','Deaven','last','321 W. Lake st','Minneapolis','MN',55111),
+	(3,'Nahombanklogin','password3','teller','Nahom','last','421 E. Lake st','Saint Paul','MN',55101),
+	(4,'Khabanklogin','password4','security_guard','Kha','last','654 Mountain Ave','Denver','CO',80014),
+	(5,'Davidbanklogin','password5','janitor','David','Knutson','905 N. Michigan Ave','Chicago','IL',60007);
+
+SELECT * FROM BankEmployees;
+	 
+CREATE TABLE Checking (   
+	checkingid  SERIAL PRIMARY KEY,
+	checkingtransdate date,
+	checkingtranstype INTEGER,
+	checkingtransdescription VARCHAR(50),
+	checkingtransamount Decimal,
+	checkingtotal Decimal,
+	checkingcustomerid INTEGER REFERENCES Customers(customerid));
+
+INSERT INTO Checking (checkingtransdate,checkingtranstype,checkingtransdescription,checkingtransamount,checkingtotal,checkingcustomerid)
+	VALUES ('2021-07-01',1,'Opening Balance',350,350,1),
+			('2021-07-13',1,'Direct Deposit',100.55,450.55,1),
+			('2021-07-21',2,'Grocery',-50.54,400.01,1),
+			('2021-06-11',1,'Opening Balance',100,1000,2),
+			('2021-06-14',2,'transfer to savings',-200,800,2),
+			('2021-06-14',2,'Paid Credit Card',-250.25,450.10,3),
+			('2021-06-14',2,'transfer to savings',-500,2500.16,4),
+			('2021-06-14',2,'Amazon purchase',-349.98,704.56,5);
+		
+SELECT * FROM Checking;
+
+		
+CREATE TABLE Savings (   
+	savingsId  SERIAL PRIMARY KEY,
+	savingstransdate date,
+	savingstranstype INTEGER,
+	savingstransdescription VARCHAR(50),
+	savingstransamount Decimal,
+	savingstranstotal Decimal,
+	savingscustomerid INTEGER REFERENCES Customers(customerid));
+
+INSERT INTO Savings (savingstransdate,savingstranstype,savingstransdescription,savingstransamount,savingstranstotal,savingscustomerid)
+	VALUES ('2021-07-01',1,'Opening Balance',0,350,1),
+			('2021-07-13',1,'Direct Deposit',100.55,450.55,1),
+			('2021-07-21',2,'Grocery',-50.54,400.01,1),
+			('2021-06-11',1,'Opening Balance',0,1000,2),
+			('2021-06-14',2,'ATM cash',-200,800,2),
+			('2021-06-14',2,'Paid Credit Card',-250.25,450.10,3),
+			('2021-06-14',2,'transfer to checking',-500,2500.16,4),
+			('2021-06-14',2,'Amazon purchase',-349.98,704.56,5);
+		
+	SELECT * FROM Savings;	
+
+
+
+CREATE TABLE Creditcards (   
+	creditid  SERIAL PRIMARY KEY,
+	credittransdate date,
+	credittranstype INTEGER,
+	credittransdescription VARCHAR(50),
+	credittransamount Decimal,
+	credittranstotal Decimal,
+	creditcustomerid INTEGER REFERENCES Customers(customerid));
+
+INSERT INTO Creditcards (credittransdate,credittranstype,credittransdescription,credittransamount,credittranstotal,creditcustomerid)
+	VALUES ('2021-07-01',1,'Opening Balance',0,350,1),
+			('2021-07-13',1,'monthly credit card payment',-100.01,249.99,1),
+			('2021-07-21',2,'loan payment',150.78,400.77,1),
+			('2021-06-11',1,'Opening Balance',0,1000,2),
+			('2021-06-14',2,'Amazon Purchase',-200,800,2),
+			('2021-06-14',2,'New Tires',-250.25,450.10,3),
+			('2021-06-14',2,'airline ticket',-500,2500.16,4),
+			('2021-06-14',2,'rental car',-349.98,704.56,5);
+		
+	SELECT * FROM Creditcards;
+
+	CREATE TABLE Loans (   
+	loanid  SERIAL PRIMARY KEY,
+	loantransdate date,
+	loantranstype INTEGER,
+	loantransdescription VARCHAR(50),
+	loantransamount Decimal,
+	loanbalancetotal Decimal,
+	loancustomerid INTEGER REFERENCES Customers(customerid), 
+	loanbankemployeesid INTEGER REFERENCES BankEmployees(employeeid)); 
+
+INSERT INTO Loans (loantransdate,loantranstype,loantransdescription,loantransamount,loanbalancetotal,loancustomerid,loanbankemployeesid)
+	VALUES ('2021-06-01',1,'new loan',0,3500,5,1),
+			('2021-07-13',2,'July loan payment',-220.55,3279.45,5,3),
+			('2021-06-11',1,'new loan',0,1500,2,1),
+			('2021-06-11',2,'July loan payment',-50,1450,2,3),
+			('2021-06-14',1,'new loan',0,5000,4,1);
+
+ SELECT * FROM Loans;
