@@ -27,7 +27,10 @@ public class Customers {
 //	customerzip INTEGER);
 	
 	
-	
+	/**
+	 * CHANGE SCRIPT of customerzip to string instead of int
+	 * 
+	 */
 
 		@Id //this makes a field the primary key
 		@GeneratedValue(strategy = GenerationType.IDENTITY) //this makes our primary key a serial data type
@@ -40,11 +43,11 @@ public class Customers {
 		@Column(name = "customerbankpassword")
 		private String customerbankpassword;
 		
-		@Column(name = "customerfirstName")
-		private String customerfirstName;
+		@Column(name = "customerfirstname")
+		private String customerfirstname;
 		
-		@Column(name = "customerlastName")
-		private String customerlastName;
+		@Column(name = "customerlastname")
+		private String customerlastname;
 		
 		@Column(name = "customeraddress")
 		private String customeraddress;
@@ -56,13 +59,13 @@ public class Customers {
 		private String customerstate;
 		
 		@Column(name = "customerzip")
-		private Integer customerzip;
+		private int customerzip;
 		
 //		checkingcustomerid
 //		checkingid
 		
-		@OneToMany(mappedBy="checkingcustomerid", fetch=FetchType.EAGER)
-		private List<Checking> checkingacct;
+//		@OneToMany(mappedBy="checkingid", fetch=FetchType.EAGER)
+//		private List<Checking> checkingacct;
 		//what is mappedBy? It's the field in the Book Class that references the checking class 
 		//(the Checking Class has an "checkingcustomerid" field)
 		//Super necessary if we want this to act like a ManyToMany Relationship
@@ -74,43 +77,29 @@ public class Customers {
 			super();
 			// TODO Auto-generated constructor stub
 		}
-		public Customers(int id, String customerusername, String customerbankpassword, String customerfirstName,
-				String customerlastName, String customeraddress, String customercity, String customerstate,
-				Integer customerzip, List<Checking> checkingacct) {
+		
+		public Customers(int id, String customerusername, String customerbankpassword, String customerfirstname,
+				String customerlastname, String customeraddress, String customercity, String customerstate,
+				int customerzip) {
 			super();
 			this.id = id;
 			this.customerusername = customerusername;
 			this.customerbankpassword = customerbankpassword;
-			this.customerfirstName = customerfirstName;
-			this.customerlastName = customerlastName;
+			this.customerfirstname = customerfirstname;
+			this.customerlastname = customerlastname;
 			this.customeraddress = customeraddress;
 			this.customercity = customercity;
 			this.customerstate = customerstate;
 			this.customerzip = customerzip;
-			this.checkingacct = checkingacct;
 		}
 		@Override
 		public String toString() {
 			return "Customers [id=" + id + ", customerusername=" + customerusername + ", customerbankpassword="
-					+ customerbankpassword + ", customerfirstName=" + customerfirstName + ", customerlastName="
-					+ customerlastName + ", customeraddress=" + customeraddress + ", customercity=" + customercity
+					+ customerbankpassword + ", customerfirstname=" + customerfirstname + ", customerlastname="
+					+ customerlastname + ", customeraddress=" + customeraddress + ", customercity=" + customercity
 					+ ", customerstate=" + customerstate + ", customerzip=" + customerzip + "]";
 		}
-		@Override
-		public int hashCode() {
-			final int prime = 31;
-			int result = 1;
-			result = prime * result + ((customeraddress == null) ? 0 : customeraddress.hashCode());
-			result = prime * result + ((customerbankpassword == null) ? 0 : customerbankpassword.hashCode());
-			result = prime * result + ((customercity == null) ? 0 : customercity.hashCode());
-			result = prime * result + ((customerfirstName == null) ? 0 : customerfirstName.hashCode());
-			result = prime * result + ((customerlastName == null) ? 0 : customerlastName.hashCode());
-			result = prime * result + ((customerstate == null) ? 0 : customerstate.hashCode());
-			result = prime * result + ((customerusername == null) ? 0 : customerusername.hashCode());
-			result = prime * result + ((customerzip == null) ? 0 : customerzip.hashCode());
-			result = prime * result + id;
-			return result;
-		}
+		
 		@Override
 		public boolean equals(Object obj) {
 			if (this == obj)
@@ -135,15 +124,15 @@ public class Customers {
 					return false;
 			} else if (!customercity.equals(other.customercity))
 				return false;
-			if (customerfirstName == null) {
-				if (other.customerfirstName != null)
+			if (customerfirstname == null) {
+				if (other.customerfirstname != null)
 					return false;
-			} else if (!customerfirstName.equals(other.customerfirstName))
+			} else if (!customerfirstname.equals(other.customerfirstname))
 				return false;
-			if (customerlastName == null) {
-				if (other.customerlastName != null)
+			if (customerlastname == null) {
+				if (other.customerlastname != null)
 					return false;
-			} else if (!customerlastName.equals(other.customerlastName))
+			} else if (!customerlastname.equals(other.customerlastname))
 				return false;
 			if (customerstate == null) {
 				if (other.customerstate != null)
@@ -154,11 +143,6 @@ public class Customers {
 				if (other.customerusername != null)
 					return false;
 			} else if (!customerusername.equals(other.customerusername))
-				return false;
-			if (customerzip == null) {
-				if (other.customerzip != null)
-					return false;
-			} else if (!customerzip.equals(other.customerzip))
 				return false;
 			if (id != other.id)
 				return false;
@@ -182,17 +166,17 @@ public class Customers {
 		public void setCustomerbankpassword(String customerbankpassword) {
 			this.customerbankpassword = customerbankpassword;
 		}
-		public String getCustomerfirstName() {
-			return customerfirstName;
+		public String getCustomerfirstname() {
+			return customerfirstname;
 		}
-		public void setCustomerfirstName(String customerfirstName) {
-			this.customerfirstName = customerfirstName;
+		public void setCustomerfirstName(String customerfirstname) {
+			this.customerfirstname = customerfirstname;
 		}
-		public String getCustomerlastName() {
-			return customerlastName;
+		public String getCustomerlastname() {
+			return customerlastname;
 		}
-		public void setCustomerlastName(String customerlastName) {
-			this.customerlastName = customerlastName;
+		public void setCustomerlastname(String customerlastname) {
+			this.customerlastname = customerlastname;
 		}
 		public String getCustomeraddress() {
 			return customeraddress;
@@ -212,18 +196,13 @@ public class Customers {
 		public void setCustomerstate(String customerstate) {
 			this.customerstate = customerstate;
 		}
-		public Integer getCustomerzip() {
+		public int getCustomerzip() {
 			return customerzip;
 		}
-		public void setCustomerzip(Integer customerzip) {
+		public void setCustomerzip(int customerzip) {
 			this.customerzip = customerzip;
 		}
-		public List<Checking> getCheckingacct() {
-			return checkingacct;
-		}
-		public void setCheckingacct(List<Checking> checkingacct) {
-			this.checkingacct = checkingacct;
-		}
+
 
 		
 		 
