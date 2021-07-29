@@ -6,12 +6,23 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { LoginComponent } from './login/login.component';
+import { SavingComponent } from './saving/saving.component';
+
+import { CreditComponent } from './credit/credit.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent,
+    SavingComponent,
+   
+    CreditComponent,
+         FooterComponent,
+   
   ],
   imports: [
     BrowserModule,
