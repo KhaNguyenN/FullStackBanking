@@ -6,7 +6,7 @@ import com.revature.models.Savings;
 import com.revature.utils.HibernateUtil;
 
 public class SavingsDAO {
-
+	//Shows all of the information on the Savings table
 	public static List<Savings> findAllSavings() {
 		Session ses = HibernateUtil.getSession();
 		

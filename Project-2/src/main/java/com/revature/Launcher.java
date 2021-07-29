@@ -16,7 +16,6 @@ public class Launcher {
 	private static CheckingDAO checkingDAO = new CheckingDAO();
 	private static CreditCardsDAO CreditCardsDAO = new CreditCardsDAO();
 	
-	
 	public static void main(String[] args) {
 		
 		//Shows all of the information on the Customers table
@@ -25,7 +24,6 @@ public class Launcher {
 		for(Customers c : cList) {
 			System.out.println(c);
 		}
-		
 		
 		//Shows all of the information on the Checking table
 		List<Checking> checkingList = checkingDAO.findAllChecking();
