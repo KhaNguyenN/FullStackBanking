@@ -37,7 +37,7 @@ public class MasterServlet extends HttpServlet {
 			
 		case "accountCreation":
 			break;
-			
+	
 		case "checking":
 			break;
 		case "credit":
