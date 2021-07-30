@@ -71,7 +71,7 @@ public class MasterServlet extends HttpServlet {
 			savingscontroller.selectSavingsById(res);
 			break;
 		case "selectCreditCardsById":
-			creditcardscontroller.selectCreditCardsById(res);
+			creditcardscontroller.selectCreditCardsById(req,res);
 			break;
         
 		case "credit":
