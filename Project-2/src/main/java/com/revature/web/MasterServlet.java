@@ -7,16 +7,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import com.revature.controllers.CheckingController;
 import com.revature.controllers.LoginController;
-
-
-@WebServlet("/FullStackBanking/")
+ 
 //remember, this is our front controller - ALL requests that come in will have to hit this first.
 public class MasterServlet extends HttpServlet {
 	
 	//instantiate classes
 	private LoginController lc = new LoginController();
+private CheckingController checkingcontroller = new CheckingController();
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
@@ -51,7 +50,8 @@ public class MasterServlet extends HttpServlet {
 		case "accountCreation":
 			break;
 			
-		case "checking":
+		case "selectCheckingById":
+			checkingcontroller.selectCheckingById(res);
 			break;
 		case "credit":
 			break;
