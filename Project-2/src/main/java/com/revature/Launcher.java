@@ -18,12 +18,6 @@ public class Launcher {
 	
 	public static void main(String[] args) {
 		
-		//Shows all of the information on the Customers table
-		List<Customers> cList = cDAO.findAllCustomers();
-		
-		for(Customers c : cList) {
-			System.out.println(c);
-		}
 		
 		//Shows all of the information on the Checking table
 		List<Checking> checkingList = checkingDAO.findAllChecking();
@@ -45,6 +39,15 @@ public class Launcher {
 		for(Savings savings : SavingsList) {
 			System.out.println(savings);
 		}	
+		
+		
+		//Shows all of the information on the Customers table
+		List<Customers> cList = cDAO.findAllCustomers();
+		
+		for(Customers c : cList) {
+			System.out.println(c);
+		}
+				
 	}
 }
 

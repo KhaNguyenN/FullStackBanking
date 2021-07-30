@@ -22,12 +22,10 @@ public class CheckingService {
 	
 	//private CheckingInterface cDAO = new CheckingDAO(int id);
 	
-	public Checking selectCheckingById(int id) {
+	public Checking selectCheckingById(int id) 
+	{
 		return cDAO.selectCheckingById(id);
-
-}
-	
-	
+	}
 }
 
 //selectCheckingById(int id)

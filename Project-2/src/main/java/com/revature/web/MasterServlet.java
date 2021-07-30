@@ -55,8 +55,16 @@ public class MasterServlet extends HttpServlet {
 			break;
 			
 		case "selectCheckingById":
-			checkingcontroller.selectCheckingById(res);
+			checkingcontroller.selectCheckingById(req, res); //This should request an ID, response should be checking table of that user
 			break;
+			
+			/* Test selectCheckingById on Postman (POST)
+			{
+		    	"id": "5"
+			}
+			*/
+			
+			
 		case "selectSavingsById":
 			savingscontroller.selectSavingsById(res);
 			break;
