@@ -68,12 +68,25 @@ public class MasterServlet extends HttpServlet {
 			
 			
 		case "selectSavingsById":
-			savingscontroller.selectSavingsById(res);
+			savingscontroller.selectSavingsById(req, res);
 			break;
+			
+			/* Test selectSavingsById on Postman (POST)
+			{
+		    	"id": "5"
+			}
+			*/
+			
 		case "selectCreditCardsById":
-			creditcardscontroller.selectCreditCardsById(res);
+			//creditcardscontroller.selectCreditCardsById(req, res);
 			break;
         
+			/* Test selectCreditCardsById on Postman (POST)
+			{
+		    	"id": "5"
+			}
+			*/
+			
 		case "credit":
 			break;
 			
