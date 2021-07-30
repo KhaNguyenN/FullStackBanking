@@ -8,7 +8,7 @@ import com.revature.models.Customers;
 public class CustomersService {
 
 	private CustomersInterface cDAO = new CustomersDAO();
-	private CustomersDAO cDAO = new CustomersDAO();
+	//private CustomersDAO cDAO = new CustomersDAO();
 	
 	public List<Customers> findAllCustomers(){
 		return cDAO.findAllCustomers();
