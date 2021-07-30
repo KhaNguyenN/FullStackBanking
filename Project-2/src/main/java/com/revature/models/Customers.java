@@ -92,6 +92,22 @@ public class Customers {
 			this.customerstate = customerstate;
 			this.customerzip = customerzip;
 		}
+		
+		//No id args consturctor to add new Customers
+		public Customers(String customerusername, String customerbankpassword, String customerfirstname,
+				String customerlastname, String customeraddress, String customercity, String customerstate,
+				int customerzip) {
+			super();
+			this.customerusername = customerusername;
+			this.customerbankpassword = customerbankpassword;
+			this.customerfirstname = customerfirstname;
+			this.customerlastname = customerlastname;
+			this.customeraddress = customeraddress;
+			this.customercity = customercity;
+			this.customerstate = customerstate;
+			this.customerzip = customerzip;
+		}
+
 		@Override
 		public String toString() {
 			return "Customers [id=" + id + ", customerusername=" + customerusername + ", customerbankpassword="

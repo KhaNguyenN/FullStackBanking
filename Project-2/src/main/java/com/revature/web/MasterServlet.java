@@ -3,12 +3,20 @@ package com.revature.web;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.revature.controllers.LoginController;
+
+
+@WebServlet("/FullStackBanking/")
 //remember, this is our front controller - ALL requests that come in will have to hit this first.
 public class MasterServlet extends HttpServlet {
+	
+	//instantiate classes
+	private LoginController lc = new LoginController();
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
@@ -23,17 +31,22 @@ public class MasterServlet extends HttpServlet {
 		
 		//Now we want to write some code that will determine where requests get sent.
 		
-		String URI = req.getRequestURI().replace("/Project-2/", "");
+		String URI = req.getRequestURI().replace("/FullStack_Banking/", "");
 		//getting the request URI, and stripping out the base URL
 		//so we'll just be left with the endpoint (e.g. "avengers", "login") to use in a switch
 		
 		switch(URI) {
 		
-		case "logout":
+		case "login": 
+			lc.login(req, res);
 			break;
 			
-		case "login": 
-			break;
+			/* Test Login on Postman (POST)
+			 { 
+    				"userName":"Greglogin",
+    				"userPass":"password1"
+			 }
+			 */
 			
 		case "accountCreation":
 			break;
@@ -63,9 +76,6 @@ public class MasterServlet extends HttpServlet {
 		}
 		
 	}
-	
-	
-	
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
 		doGet(req, res);
