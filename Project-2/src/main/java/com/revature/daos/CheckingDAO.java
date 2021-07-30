@@ -30,7 +30,6 @@ public class CheckingDAO {
 		//here we're saying "Create a new Author object by getting the Author from the DB that has this id"
 		
 		HibernateUtil.closeSession();
-		
 		return checking; //remember, return ends the method, so we close the Session, then return
 	}
 
