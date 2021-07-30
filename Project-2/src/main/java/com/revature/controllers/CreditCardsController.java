@@ -18,7 +18,7 @@ public class CreditCardsController {
 												  //transform data from JSON -> Java or Java -> JSON
 	
 	//whenever you're working with HttpServletRequests/Responses, your method will need to throw an IOException
-	public void findAllCreditCards(HttpServletResponse res) throws IOException {
+	public void selectCreditCardsById(HttpServletResponse res) throws IOException {
 		    
 		List<CreditCards> creditcardsList = as.findAllCreditCards(); //get the List of Expenses 
 		String json = om.writeValueAsString(creditcardsList); //turn that List in a JSON String	
