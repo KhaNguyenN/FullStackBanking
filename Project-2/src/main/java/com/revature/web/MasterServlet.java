@@ -78,7 +78,11 @@ public class MasterServlet extends HttpServlet {
 			*/
 			
 		case "selectCreditCardsById":
-			//creditcardscontroller.selectCreditCardsById(req, res);
+ 
+			creditcardscontroller.selectCreditCardsById(req,res);
+ 
+			 
+ 
 			break;
         
 			/* Test selectCreditCardsById on Postman (POST)
