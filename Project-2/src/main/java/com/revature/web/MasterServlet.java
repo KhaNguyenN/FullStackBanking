@@ -3,15 +3,19 @@ package com.revature.web;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import com.revature.controllers.CheckingController;
-
+import com.revature.controllers.LoginController;
+ 
 //remember, this is our front controller - ALL requests that come in will have to hit this first.
 public class MasterServlet extends HttpServlet {
-	private CheckingController checkingcontroller = new CheckingController();
+	
+	//instantiate classes
+	private LoginController lc = new LoginController();
+private CheckingController checkingcontroller = new CheckingController();
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
@@ -32,11 +36,16 @@ public class MasterServlet extends HttpServlet {
 		
 		switch(URI) {
 		
-		case "logout":
+		case "login": 
+			lc.login(req, res);
 			break;
 			
-		case "login": 
-			break;
+			/* Test Login on Postman (POST)
+			 { 
+    				"userName":"Greglogin",
+    				"userPass":"password1"
+			 }
+			 */
 			
 		case "accountCreation":
 			break;
@@ -67,9 +76,6 @@ public class MasterServlet extends HttpServlet {
 		}
 		
 	}
-	
-	
-	
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
 		doGet(req, res);
