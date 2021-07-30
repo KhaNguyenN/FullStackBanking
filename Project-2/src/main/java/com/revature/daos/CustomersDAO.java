@@ -7,7 +7,7 @@ import org.hibernate.Session;
 import com.revature.models.Customers;
 import com.revature.utils.HibernateUtil;
 
-public class CustomersDAO {
+public class CustomersDAO implements CustomersInterface{
 	
 	//Shows all of the information on the Customers table
 	public List<Customers> findAllCustomers(){
@@ -20,5 +20,25 @@ public class CustomersDAO {
 		
 		return customerList;
 	}
+	
+	public void addCustomer(Customers customer) {
+		
+		Session ses = HibernateUtil.getSession();
+		
+		ses.save(customer);
+		
+		HibernateUtil.closeSession();
+		
+	}
+	
+	public void updateCustomer(Customers customer) {
+		
+		Session ses = HibernateUtil.getSession();
+		
+		ses.merge(customer);
+		
+		HibernateUtil.closeSession();
+	}
+	
 	
 }

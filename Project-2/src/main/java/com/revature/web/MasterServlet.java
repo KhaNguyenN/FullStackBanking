@@ -7,8 +7,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.revature.controllers.CustomersController;
+
 //remember, this is our front controller - ALL requests that come in will have to hit this first.
 public class MasterServlet extends HttpServlet {
+	
+	private CustomersController customerscontroller = new CustomersController();
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
@@ -23,7 +27,7 @@ public class MasterServlet extends HttpServlet {
 		
 		//Now we want to write some code that will determine where requests get sent.
 		
-		String URI = req.getRequestURI().replace("/Project-2/", "");
+		String URI = req.getRequestURI().replace("/FullStack_Banking/", "");
 		//getting the request URI, and stripping out the base URL
 		//so we'll just be left with the endpoint (e.g. "avengers", "login") to use in a switch
 		
@@ -59,6 +63,13 @@ public class MasterServlet extends HttpServlet {
 			break;
 			
 		case"showTransaction":
+			break;
+		
+		case "createCustomer":
+			customerscontroller.addCustomer(req, res);
+			break;
+		case "showCustomer":
+			customerscontroller.findAllCustomers(res);
 			break;
 		}
 		
