@@ -10,8 +10,6 @@ import com.revature.models.Checking;
 
 public class CheckingService {
 	
-	
-	
 	private CheckingDAO fDAO = new CheckingDAO();
 	private CheckingDAO cDAO = new CheckingDAO();
 	
