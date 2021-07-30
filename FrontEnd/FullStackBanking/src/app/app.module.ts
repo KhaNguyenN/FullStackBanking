@@ -8,9 +8,12 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { SavingComponent } from './saving/saving.component';
-
+import { FormsModule } from '@angular/forms';
 import { CreditComponent } from './credit/credit.component';
 import { FooterComponent } from './footer/footer.component';
+import { LogoutComponent } from './logout/logout.component';
+import { HeaderComponent } from './header/header.component';
+import { UserPageComponent } from './user-page/user-page.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +25,17 @@ import { FooterComponent } from './footer/footer.component';
    
     CreditComponent,
          FooterComponent,
+         LogoutComponent,
+         HeaderComponent,
+         UserPageComponent,
+
    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

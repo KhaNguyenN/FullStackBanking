@@ -1,50 +1,85 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">First Bank</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="login_btn">Login</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav Bar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
-<div id="id01" class="modal">
-  
-  <form class="modal-content animate" action="/action_page.php" method="post">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-     
-    </div>
-
-    <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+</head>
+<body>
+    <!-- navbar-->
+ <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+     <div class="container-xxl">
+         <a href="#main-nav" class="navbar-brand">
+             <span class="fw-bold text-secondary">
+                 Full Stack Banking
+             </span>
+         </a>
+         <!-- Toggle button for login-->
+         <button class="navbar-toggler" type="button" data-toggle="dropdown" data-target="#main-nav" aria-controls="main-nav" 
+         aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Drop down menu-->
         
-      <button type="submit">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
+      <!-- navbar links -->
+      <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#about-us">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#reviews">Reviews</a>
+          </li>
+         
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Log in
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div>
+                    <h4>Account Login</h4>
+                    <label for="username" >Username</label>
+                    <input id="username" [(ngModel)] ="username" type="text" placeholder="username" class="col-sm-4 form-control">
+                    <br>
+                    <label for="password">Password</label>
+                    <input id="password" [(ngModel)] ="password" type="password" placeholder="password" class="col-sm-4 form-control"> 
+                    <br>
+                    <button id="loginButton"  class="btn btn-dark"  routerLink ='/user'>Login</button>  
+                    <!--(click)="checkLogin()" -->
+                </div>
+             
+            </ul>
+        </ul>
+      </div>
+      
     </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-  </form>
-</div>
-
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
-
-    </div>
+    
   </nav>
+  
+
+  <!-- main image & intro text -->
+  <section id="intro">
+ 
+  </section>
+
+  <!-- pricing plans -->
+
+
+  <!-- topics at a glance -->
+
+
+  <!-- reviews list -->
+
+
+  <!-- contact form -->
+
+
+  <!-- get updates / modal trigger -->
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>

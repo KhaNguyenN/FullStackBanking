@@ -1,4 +1,4 @@
-
+<!-- 
 
 
 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="login_btn">Login</button>
@@ -13,12 +13,12 @@
 
     <div class="container">
       <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      <input type="text" placeholder="Enter Username" name="uname" [(ngModel)] ="username">
 
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <input type="password" placeholder="Enter Password" name="psw" [(ngModel)] ="password">
         
-      <button type="submit">Login</button>
+      <button (click)="checkLogin()" >Login</button>
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
@@ -31,7 +31,9 @@
   </form>
 </div>
 
+<script>src = "login.component.ts"</script>
 <script>
+
 // Get the modal
 var modal = document.getElementById('id01');
 
@@ -41,4 +43,4 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-</script>
+</script> -->
