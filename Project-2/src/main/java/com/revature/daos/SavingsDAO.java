@@ -2,6 +2,8 @@ package com.revature.daos;
 
 import java.util.List;
 import org.hibernate.Session;
+
+import com.revature.models.Checking;
 import com.revature.models.Savings;
 import com.revature.utils.HibernateUtil;
 
@@ -16,4 +18,17 @@ public class SavingsDAO {
 		
 		return SavingsList;
 	}
+	
+	public Savings selectSavingsById(int id) {
+		
+		Session ses = HibernateUtil.getSession();
+		
+		Savings savings = ses.get(Savings.class, id); //get() gets an object straight from the DB, skips the cache 
+		//here we're saying "Create a new Author object by getting the Author from the DB that has this id"
+		
+		HibernateUtil.closeSession();
+		
+		return savings; //remember, return ends the method, so we close the Session, then return
+	}
+	
 }
