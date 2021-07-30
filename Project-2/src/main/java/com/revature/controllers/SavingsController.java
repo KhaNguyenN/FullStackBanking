@@ -18,7 +18,7 @@ public class SavingsController {
 												  //transform data from JSON -> Java or Java -> JSON
 	
 	//whenever you're working with HttpServletRequests/Responses, your method will need to throw an IOException
-	public void findAllSavings(HttpServletResponse res) throws IOException {
+	public void selectSavingsById(HttpServletResponse res) throws IOException {
 		    
 		List<Savings> savingsList = as.findAllSavings(); //get the List of Expenses 
 		String json = om.writeValueAsString(savingsList); //turn that List in a JSON String	
