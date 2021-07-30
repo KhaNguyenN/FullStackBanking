@@ -39,6 +39,4 @@ public class CustomersDAO implements CustomersInterface{
 		
 		HibernateUtil.closeSession();
 	}
-	
-	
 }

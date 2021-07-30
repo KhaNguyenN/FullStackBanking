@@ -1,17 +1,17 @@
 package com.revature.controllers;
 
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.models.Customers;
 import com.revature.models.CustomersDTO;
 import com.revature.services.CustomersService;
+
 
 public class CustomersController {
 
@@ -27,7 +27,7 @@ public class CustomersController {
 		
 		res.setStatus(200);
 	}
-	
+
 	public void addCustomer(HttpServletRequest req, HttpServletResponse res) throws IOException{
 		
 		if(req.getMethod().equals("POST")) {
@@ -72,9 +72,7 @@ public class CustomersController {
 				
 			res.setStatus(401);
 		}
-		
-		
-		
+
 	}
-	
+
 }

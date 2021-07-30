@@ -1,18 +1,27 @@
 package com.revature.web;
 
 import java.io.IOException;
-
+import com.revature.controllers.CustomersController;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.revature.controllers.CustomersController;
-
+import com.revature.controllers.CheckingController;
+import com.revature.controllers.CreditCardsController;
+import com.revature.controllers.LoginController;
+import com.revature.controllers.SavingsController;
 //remember, this is our front controller - ALL requests that come in will have to hit this first.
+
 public class MasterServlet extends HttpServlet {
 	
-	private CustomersController customerscontroller = new CustomersController();
+	//instantiate classes
+	private LoginController lc = new LoginController();
+	private CheckingController checkingcontroller = new CheckingController();
+	private SavingsController savingscontroller = new SavingsController();
+	private CreditCardsController creditcardscontroller = new CreditCardsController();
+  private CustomersController customerscontroller = new CustomersController();
+
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
@@ -33,17 +42,30 @@ public class MasterServlet extends HttpServlet {
 		
 		switch(URI) {
 		
-		case "logout":
+		case "login": 
+			lc.login(req, res);
 			break;
 			
-		case "login": 
-			break;
+			/* Test Login on Postman (POST)
+			 { 
+    				"userName":"Greglogin",
+    				"userPass":"password1"
+			 }
+			 */
 			
 		case "accountCreation":
 			break;
 			
-		case "checking":
+		case "selectCheckingById":
+			checkingcontroller.selectCheckingById(res);
 			break;
+		case "selectSavingsById":
+			savingscontroller.selectSavingsById(res);
+			break;
+		case "selectCreditCardsById":
+			creditcardscontroller.selectCreditCardsById(res);
+			break;
+        
 		case "credit":
 			break;
 			
@@ -72,18 +94,11 @@ public class MasterServlet extends HttpServlet {
 			customerscontroller.findAllCustomers(res);
 			break;
 		}
-		
 	}
-	
-	
-	
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		
 		doGet(req, res);
 		//this sends every POST request to the doGet method, why???
 		//I only want one switch statement in this Servlet. It can get very messy otherwise
 		//and we'll differentiate get from post in the controllers instead of the servlet.
-		
-	}
-	
+  }
 }
