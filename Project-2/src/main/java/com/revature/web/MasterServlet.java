@@ -1,7 +1,7 @@
 package com.revature.web;
 
 import java.io.IOException;
-
+import com.revature.controllers.CustomersController;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,8 +11,8 @@ import com.revature.controllers.CheckingController;
 import com.revature.controllers.CreditCardsController;
 import com.revature.controllers.LoginController;
 import com.revature.controllers.SavingsController;
- 
 //remember, this is our front controller - ALL requests that come in will have to hit this first.
+
 public class MasterServlet extends HttpServlet {
 	
 	//instantiate classes
@@ -20,6 +20,8 @@ public class MasterServlet extends HttpServlet {
 	private CheckingController checkingcontroller = new CheckingController();
 	private SavingsController savingscontroller = new SavingsController();
 	private CreditCardsController creditcardscontroller = new CreditCardsController();
+  private CustomersController customerscontroller = new CustomersController();
+
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
@@ -63,7 +65,7 @@ public class MasterServlet extends HttpServlet {
 		case "selectCreditCardsById":
 			creditcardscontroller.selectCreditCardsById(res);
 			break;
-			
+        
 		case "credit":
 			break;
 			
@@ -84,16 +86,19 @@ public class MasterServlet extends HttpServlet {
 			
 		case"showTransaction":
 			break;
-		}
 		
+		case "createCustomer":
+			customerscontroller.addCustomer(req, res);
+			break;
+		case "showCustomer":
+			customerscontroller.findAllCustomers(res);
+			break;
+		}
 	}
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		
 		doGet(req, res);
 		//this sends every POST request to the doGet method, why???
 		//I only want one switch statement in this Servlet. It can get very messy otherwise
 		//and we'll differentiate get from post in the controllers instead of the servlet.
-		
-	}
-	
+  }
 }
