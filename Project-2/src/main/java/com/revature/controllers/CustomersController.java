@@ -45,7 +45,18 @@ public class CustomersController {
 			
 			CustomersDTO cDTO = om.readValue(body, CustomersDTO.class);
 			
-			HttpSession ses = req.getSession();
+			Customers newCustomer = new Customers();
+			
+			newCustomer.setCustomerusername(cDTO.getCustomerusername());
+			newCustomer.setCustomerbankpassword(cDTO.getCustomerbankpassword());
+			newCustomer.setCustomerfirstName(cDTO.getCustomerfirstname());
+			newCustomer.setCustomerlastname(cDTO.getCustomerlastname());
+			newCustomer.setCustomeraddress(cDTO.getCustomeraddress());
+			newCustomer.setCustomercity(cDTO.getCustomercity());
+			newCustomer.setCustomerstate(cDTO.getCustomerstate());
+			newCustomer.setCustomerzip(Integer.parseInt(cDTO.getCustomerzip()));
+			
+			cs.addCustomer(newCustomer);
 			
 //			{
 //				"customerusername": "testAdd",
@@ -57,21 +68,13 @@ public class CustomersController {
 //				"customerzip": "12345"
 //			}
 			
-			ses.setAttribute("customer", cDTO);
+			
 			
 			
 			res.setStatus(201);
 			res.getWriter().print("Add worked");
 			
-		} else {
-			HttpSession ses = req.getSession(false);
-				
-			if(ses != null) {
-				ses.invalidate();
-			}
-				
-			res.setStatus(401);
-		}
+		} 
 
 	}
 
