@@ -24,6 +24,11 @@ public class CheckingService {
 	{
 		return cDAO.selectCheckingById(id);
 	}
+	
+	public Checking createChecking(Checking checking)
+	{
+		return checking;
+	}
 }
 
 //selectCheckingById(int id)
