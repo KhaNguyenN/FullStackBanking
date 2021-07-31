@@ -264,4 +264,14 @@ public class CheckingController {
 				//System.out.println(checking.getCustomers());
 		}
 	}
+	public void findAllChecking(HttpServletResponse res) throws IOException {
+			List<Checking> checkingList = cs.findAllChecking();
+			
+			String json = om.writeValueAsString(checkingList); //turn the list into a JSON String
+			
+			res.getWriter().print(json); //put the JSON into the response object
+			
+			res.setStatus(200);
+		}
 }
+
