@@ -52,10 +52,7 @@ public class MasterServlet extends HttpServlet {
     				"userPass":"password1"
 			 }
 			 */
-			
-		case "accountCreation":
-			break;
-			
+		
 		case "selectCheckingById":
 			checkingcontroller.selectCheckingById(req, res); //This should request an ID, response should be checking table of that user
 			break;
@@ -99,7 +96,6 @@ public class MasterServlet extends HttpServlet {
 			*/
 			
 			
-			
 		case "savingsToChecking":
 			break;
 		
@@ -124,8 +120,19 @@ public class MasterServlet extends HttpServlet {
             	}
 			 */
 			
-		case "showCustomer":
+		//Test Methods
+		case "showCustomer": //Use showCustomerByID instead
 			customerscontroller.findAllCustomers(res);
+			break;
+		
+		case "showChecking": //Use showCheckingByID instead
+			checkingcontroller.findAllChecking(res);
+			break;
+		
+		case "showSavings":
+			break;
+			
+		case "showCreditCards":
 			break;
 		}
 	}
