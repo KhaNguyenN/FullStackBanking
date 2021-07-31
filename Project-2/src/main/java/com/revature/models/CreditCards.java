@@ -1,5 +1,4 @@
 package com.revature.models;
-import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -13,8 +12,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-
 @Entity
 @Table(name = "CreditCards")
 
@@ -26,7 +23,7 @@ public class CreditCards {
 	private int id;
 	
 	@Column(name = "credittransdate")
-	private Date credittransdate;
+	private String credittransdate;
 	
 	@Column(name = "credittranstype")
 	private Integer credittranstype;
@@ -51,7 +48,7 @@ public class CreditCards {
 		// TODO Auto-generated constructor stub
 	}
 
-	public CreditCards(int id, Date credittransdate, Integer credittranstype, String credittransdescription,
+	public CreditCards(int id, String credittransdate, Integer credittranstype, String credittransdescription,
 			Double credittransamount, Double credittranstotal, Customers customers) {
 		super();
 		this.id = id;
@@ -117,11 +114,11 @@ public class CreditCards {
 		this.id = id;
 	}
 
-	public Date getCredittransdate() {
+	public String getCredittransdate() {
 		return credittransdate;
 	}
 
-	public void setCredittransdate(Date credittransdate) {
+	public void setCredittransdate(String credittransdate) {
 		this.credittransdate = credittransdate;
 	}
 

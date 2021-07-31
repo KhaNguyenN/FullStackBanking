@@ -1,7 +1,5 @@
 package com.revature.models;
 
-import java.sql.Date;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,15 +15,12 @@ import javax.persistence.Table;
 @Table(name = "Checking")
 
 //checkingid  SERIAL PRIMARY KEY,
-//checkingtransdate date,
+//checkingtransDate String,
 //checkingtranstype INTEGER,
 //checkingtransdescription VARCHAR(50),
 //checkingtransamount Double,
 //checkingtotal Double,
 //checkingcustomerid INTEGER REFERENCES Customers(customer_id));
-
-
-
 
 
 public class Checking {
@@ -35,8 +30,8 @@ public class Checking {
 	@Column(name = "checkingid") //otherwise it would just be "id" in the database
 	private int id;
 	
-	@Column(name = "checkingtransdate")
-	private Date checkingtransdate;
+	@Column(name = "checkingtransDate")
+	private String checkingtransDate;
 	
 	@Column(name = "checkingtranstype")
 	private Integer checkingtranstype;
@@ -52,7 +47,7 @@ public class Checking {
 	
 	
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinColumn(name = "customerid") //specify with Author column to 	create a relationship on
+	@JoinColumn(name = "customerid") //specify with Customer column to create a relationship on
 	private Customers customers;
 
 	//---------------Boilerplate----------------------------
@@ -62,11 +57,23 @@ public class Checking {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Checking(int id, Date checkingtransdate, Integer checkingtranstype, String checkingtransdescription,
+	public Checking(int id, String checkingtransDate, Integer checkingtranstype, String checkingtransdescription,
 			Double checkingtransamount, Double checkingtranstotal, Customers customers) {
 		super();
 		this.id = id;
-		this.checkingtransdate = checkingtransdate;
+		this.checkingtransDate = checkingtransDate;
+		this.checkingtranstype = checkingtranstype;
+		this.checkingtransdescription = checkingtransdescription;
+		this.checkingtransamount = checkingtransamount;
+		this.checkingtranstotal = checkingtranstotal;
+		this.customers = customers;
+	}
+
+	
+	public Checking(String checkingtransDate, Integer checkingtranstype, String checkingtransdescription,
+			Double checkingtransamount, Double checkingtranstotal, Customers customers) {
+		super();
+		this.checkingtransDate = checkingtransDate;
 		this.checkingtranstype = checkingtranstype;
 		this.checkingtransdescription = checkingtransdescription;
 		this.checkingtransamount = checkingtransamount;
@@ -128,12 +135,12 @@ public class Checking {
 		this.id = id;
 	}
 
-	public Date getCheckingtransdate() {
-		return checkingtransdate;
+	public String getcheckingtransDate() {
+		return checkingtransDate;
 	}
 
-	public void setCheckingtransdate(Date checkingtransdate) {
-		this.checkingtransdate = checkingtransdate;
+	public void setcheckingtransDate(String checkingtransDate) {
+		this.checkingtransDate = checkingtransDate;
 	}
 
 	public Integer getCheckingtranstype() {

@@ -31,4 +31,16 @@ public class SavingsDAO {
 		return savings; //remember, return ends the method, so we close the Session, then return
 	}
 	
+	public void insertSavings(Savings savings) {
+		
+		//Open a Session object so that we can connect to the database
+		Session ses = HibernateUtil.getSession(); //Note the parallels between ConnectionUtil.getConnection() in JDBC!
+		
+		ses.save(savings); //Refer to the notes if you don't recognize this method - it's a method for Insert functionality
+		
+		HibernateUtil.closeSession(); //Close our Session (not super necessary here, but good practice)
+		
+		//That's the whole insert method!!!
+		//DAO methods are significantly cleaner with Hibernate than JDBC
+	}
 }

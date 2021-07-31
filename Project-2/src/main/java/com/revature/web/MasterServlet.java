@@ -78,11 +78,7 @@ public class MasterServlet extends HttpServlet {
 			*/
 			
 		case "selectCreditCardsById":
- 
 			creditcardscontroller.selectCreditCardsById(req,res);
- 
-			 
- 
 			break;
         
 			/* Test selectCreditCardsById on Postman (POST)
@@ -91,30 +87,43 @@ public class MasterServlet extends HttpServlet {
 			}
 			*/
 			
-		case "credit":
+		case "checkingToSavings":
+			checkingcontroller.checkingToSavings(req, res);
 			break;
+		
+			/*
+			{
+		    	"id": "1",
+                "amount":"1"
+			}
+			*/
 			
-		case"payChecking":
-			break;
 			
-		case"paySavings":
-			break;
 			
-		case"transferChecking":
+		case "savingsToChecking":
 			break;
-			
-		case"transferSavings":
+		
+		case "checkingToCredit": //This method will subtract credit amount and subtract checking amount
 			break;
-			
-		case"transferHistory":
-			break;
-			
-		case"showTransaction":
-			break;
+		
+		case "savingsToCredit": //This method will subtract credit amount and subtract savings amount
 		
 		case "createCustomer":
 			customerscontroller.addCustomer(req, res);
 			break;
+			
+			/* Test createCustomer on Postman (POST)
+			 * {
+                "customerusername": "testAdd",
+                "customerbankpassword": "yes",
+                "customerfirstname": "abc",
+                "customerlastname": "last",
+                "customeraddress": "Brookyln",
+                "customerstate": "NY",
+                "customerzip": "12345"
+            	}
+			 */
+			
 		case "showCustomer":
 			customerscontroller.findAllCustomers(res);
 			break;

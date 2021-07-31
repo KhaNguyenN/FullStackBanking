@@ -1,5 +1,4 @@
 package com.revature.models;
-import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -24,7 +23,7 @@ public class Savings {
 	private int id;
 	
 	@Column(name = "savingstransdate")
-	private Date savingstransdate;
+	private String savingstransdate;
 	
 	@Column(name = "savingstranstype")
 	private Integer savingstranstype;
@@ -49,10 +48,21 @@ public class Savings {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Savings(int id, Date savingstransdate, Integer savingstranstype, String savingstransdescription,
+	public Savings(int id, String savingstransdate, Integer savingstranstype, String savingstransdescription,
 			Double savingstransamount, Double savingstranstotal, Customers customers) {
 		super();
 		this.id = id;
+		this.savingstransdate = savingstransdate;
+		this.savingstranstype = savingstranstype;
+		this.savingstransdescription = savingstransdescription;
+		this.savingstransamount = savingstransamount;
+		this.savingstranstotal = savingstranstotal;
+		this.customers = customers;
+	}
+
+	public Savings(String savingstransdate, Integer savingstranstype, String savingstransdescription,
+			Double savingstransamount, Double savingstranstotal, Customers customers) {
+		super();
 		this.savingstransdate = savingstransdate;
 		this.savingstranstype = savingstranstype;
 		this.savingstransdescription = savingstransdescription;
@@ -115,11 +125,11 @@ public class Savings {
 		this.id = id;
 	}
 
-	public Date getSavingstransdate() {
+	public String getSavingstransdate() {
 		return savingstransdate;
 	}
 
-	public void setSavingstransdate(Date savingstransdate) {
+	public void setSavingstransdate(String savingstransdate) {
 		this.savingstransdate = savingstransdate;
 	}
 
