@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { LogoutComponent } from './logout/logout.component';
 import { HeaderComponent } from './header/header.component';
 import { UserPageComponent } from './user-page/user-page.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { UserPageComponent } from './user-page/user-page.component';
          LogoutComponent,
          HeaderComponent,
          UserPageComponent,
+         SignupComponent,
 
    
   ],

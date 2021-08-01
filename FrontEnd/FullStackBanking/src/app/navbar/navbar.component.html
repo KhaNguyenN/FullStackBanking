@@ -33,21 +33,28 @@
           <li class="nav-item">
             <a class="nav-link" href="#reviews">Reviews</a>
           </li>
-         
+          <!--For when they log-in these on the buttom will activate ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
+          <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/savings" class="nav-link">Savings</a></li>
+          <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/checking" class="nav-link">Checking</a></li>
+          <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/credit" class="nav-link">Credit</a></li>
+          <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">Logout</a></li>
+          <!--For when they log-in these on the buttom will activate ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Log in
+              Menu
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <div>
-                    <h4>Account Login</h4>
+                    <h1>Account Login</h1>
                     <label for="username" >Username</label>
-                    <input id="username" [(ngModel)] ="username" type="text" placeholder="username" class="col-sm-4 form-control">
+                    <input id="username" [(ngModel)] =" entered_user_name" type="text" placeholder="username" class="col-lg-15 form-control">
                     <br>
                     <label for="password">Password</label>
-                    <input id="password" [(ngModel)] ="password" type="password" placeholder="password" class="col-sm-4 form-control"> 
+                    <input id="password" [(ngModel)] ="entered_user_password" type="password" placeholder="password" class="col-lg-15 form-control"> 
                     <br>
-                    <button id="loginButton"  class="btn btn-dark"  routerLink ='/user'>Login</button>  
+                    <button id="loginButton"  class="btn btn-dark"  (click) = "submit()">Login</button>  
+                    <br>
+                    <button id="signUpButton"  class="btn btn-dark"  routerLink="/signup">Sign Up</button>
                     <!--(click)="checkLogin()" -->
                 </div>
              

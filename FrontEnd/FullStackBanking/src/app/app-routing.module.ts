@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { SavingComponent } from './saving/saving.component';
 import { AuthGuardService } from './services/auth-guard.service';
+import { SignupComponent } from './signup/signup.component';
 import { UserPageComponent } from './user-page/user-page.component';
 
 
@@ -19,8 +20,10 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent, canActivate:[AuthGuardService]},
   { path: 'savings', component: SavingComponent, canActivate:[AuthGuardService]},
-  { path: 'user', component: UserPageComponent, canActivate:[AuthGuardService]},
-  { path: '', component: HomePageComponent}
+  //need to add the authguard service back
+  { path: 'user', component: UserPageComponent},
+  { path: '', component: HomePageComponent},
+  { path: 'signup', component: SignupComponent}
 ];
 
 @NgModule({

@@ -93,4 +93,7 @@ input[type=text], input[type=password] {
     color: red;
     cursor: pointer;
   }
-  
+  .dropdown-menu {
+    width: 300px !important;
+    height: 400px !important;
+}
