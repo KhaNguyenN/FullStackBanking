@@ -1,12 +1,38 @@
 <!--Get users information via their information-->
-<body style="background-color:#4b47472f;">
+<body style="background-color:#4b47472f;"></body>
 
     <div class="container" id="fullcontainer">
         <h1>Transaction</h1>
         <div id="table-row" class="row">
             
+            
+            <div class="container" id="fullcontainer">
+                <!--We need a div called container to hold all the bootstrap stuff-->
+                <!--only to be added after adding login functionality in back end--> 
+                <!--only to be added after adding login functionality in back end-->
+                <div id="table-row" class="row">
+                <!--Then we need rows inside the container to organize it-->
+                    <table id="reimbursementTable" class="table table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Checking ID</th>
+                                <th>Checking Transfer Date</th>
+                                <!--<th>Type</th> -->
+                                <th>Description</th>
+                                <th>Transfer Amount</th>
+                                <th>Total</th>
+                                <!--<th>Custermer ID</th> -->
+                               
+                            </tr>
+                        </thead>
+                        <tbody id="reimbursementsBody">
+                            <!--We're going to leave the table body blank!-->
+                        </tbody>
+                    </table>
+                </div>
 
+            <button id="showTransactions"  class="btn btn-dark"  (click) = "showTransactions()">Show Transaction</button>  
+            
         </div>
     </div>
-</body>
 
