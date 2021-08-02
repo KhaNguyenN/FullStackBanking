@@ -16,6 +16,7 @@ firstname:string ="";
 lastname:string="";
 address:string="";
 state:string="";
+city:string="";
 zipcode:string="";
 password:string="";
 password2:string="";
@@ -37,7 +38,7 @@ password2:string="";
   }
   async register(){
 
-    if(this.email=="" || this.address=="" || this.firstname=="" || this.lastname=="" || this.username=="" || this.password=="" || this.password2=="" || this.zipcode=="" || this.state==""){
+    if(this.email=="" || this.address=="" || this.firstname=="" || this.lastname=="" || this.username=="" || this.password=="" || this.password2=="" || this.zipcode=="" || this.state=="" || this.city==""){
       alert("Fields Cannot be Empty");
     }
     else if(this.password != this.password2) {
