@@ -38,10 +38,10 @@ password2:string="";
   }
   async register(){
 
-    if(this.email=="" || this.address=="" || this.firstname=="" || this.lastname=="" || this.username=="" || this.password=="" || this.password2=="" || this.zipcode=="" || this.state=="" || this.city==""){
-      alert("Fields Cannot be Empty");
-    }
-    else if(this.password != this.password2) {
+    // if(this.email=="" || this.address=="" || this.firstname=="" || this.lastname=="" || this.username=="" || this.password=="" || this.password2=="" || this.zipcode=="" || this.state=="" || this.city==""){
+    //   alert("Fields Cannot be Empty");
+    // }else
+    if(this.password != this.password2) {
       alert("Passwords does not match");
     }
 
