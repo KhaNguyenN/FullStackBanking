@@ -48,6 +48,21 @@ public class CreditCards {
 		// TODO Auto-generated constructor stub
 	}
 
+	
+	
+	public CreditCards(String credittransdate, Integer credittranstype, String credittransdescription,
+			Double credittransamount, Double credittranstotal, Customers customers) {
+		super();
+		this.credittransdate = credittransdate;
+		this.credittranstype = credittranstype;
+		this.credittransdescription = credittransdescription;
+		this.credittransamount = credittransamount;
+		this.credittranstotal = credittranstotal;
+		this.customers = customers;
+	}
+
+
+
 	public CreditCards(int id, String credittransdate, Integer credittranstype, String credittransdescription,
 			Double credittransamount, Double credittranstotal, Customers customers) {
 		super();
