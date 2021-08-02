@@ -21,6 +21,7 @@ public class CustomersDAO implements CustomersInterface{
 		return customerList;
 	}
 	
+	
 	public void addCustomer(Customers customer) {
 		
 		Session ses = HibernateUtil.getSession();

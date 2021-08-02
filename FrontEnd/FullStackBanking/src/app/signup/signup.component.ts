@@ -66,7 +66,9 @@ password2:string="";
     });
 
 
-    if (response.status === 200) {
+    if (response.status === 201) {
+
+      console.log(JSON.stringify(user));
       alert("Signup successful");
     this.router.navigate(['']);
 
