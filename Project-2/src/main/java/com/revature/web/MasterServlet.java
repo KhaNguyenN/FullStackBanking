@@ -95,14 +95,18 @@ public class MasterServlet extends HttpServlet {
 			}
 			*/
 			
-			
+			//done
 		case "savingsToChecking":
+			savingscontroller.savingsToChecking(req, res);
 			break;
 		
 		case "checkingToCredit": //This method will subtract credit amount and subtract checking amount
+			checkingcontroller.checkingToCreditCards(req, res);
 			break;
 		
 		case "savingsToCredit": //This method will subtract credit amount and subtract savings amount
+			savingscontroller.savingsToCreditCards(req, res);
+			break;
 		
 		case "createCustomer":
 			customerscontroller.addCustomer(req, res);

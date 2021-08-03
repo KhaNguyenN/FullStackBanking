@@ -291,7 +291,7 @@ public class CheckingController {
 			int customerzip = 0;
 			String checkingtransdate = "DateTest";
 			Integer checkingtranstype = 2;
-			String checkingtransdescription = "Checking To Savings";
+			String checkingtransdescription = "Checking To Credit Card";
 			
 			for (Checking checking: checkingList)
 			{
@@ -364,8 +364,8 @@ public class CheckingController {
 					//					customerzip = savings.getCustomers().getCustomerzip();
 				}
 			}
-			
-			creditcardsTransTotal += AmountDTOamount;
+			//Subtracts from total
+			creditcardsTransTotal -= AmountDTOamount;
 			
 			System.out.println(creditcardsTransTotal);
 

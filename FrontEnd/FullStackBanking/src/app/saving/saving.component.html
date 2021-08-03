@@ -1,1 +1,48 @@
-<p>saving works!</p>
+<!--Get users information via their information-->
+<body style="background-color:#4b47472f; color: white;"></body>
+
+    <div class="container" id="fullcontainer">
+        <h1>Savings</h1>
+        <div id="table-row" class="row">
+            
+            
+            <div class="container" id="fullcontainer">
+                <!--We need a div called container to hold all the bootstrap stuff-->
+                <!--only to be added after adding login functionality in back end--> 
+                <!--only to be added after adding login functionality in back end-->
+                <div id="table-row" class="row">
+                <!--Then we need rows inside the container to organize it-->
+                    <table id="savingsTable" class="table table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Savings ID</th>
+                                <th>Savings Transfer Date</th>
+                                <!--<th>Type</th> -->
+                                <th>Description</th>
+                                <th>Savings Amount</th>
+                                <th>Total</th>
+                                <!--<th>Custermer ID</th> -->
+                               
+                            </tr>
+                        </thead>
+                        <tbody id="savingsBody">
+                            <!--We're going to leave the table body blank!-->
+                        </tbody>
+                    </table>
+                </div>
+
+            <button id="showSavings"  class="btn btn-dark"  (click) = "showSavings()">Show Savings</button>  
+            
+        </div>
+        <div>
+            <br>
+            <br>
+            <h4>Transfer</h4>
+                        <label for="amount" >Amount</label>
+                        <input id="amount" [(ngModel)] =" entered_amount" type="number" placeholder="Amount" class="col-lg-15 form-control">
+                        
+                        <button id="loginButton"  class="btn btn-dark"  (click) = "submitSavings()">Savings</button>  
+                        <button id="loginButton"  class="btn btn-dark"  (click) = "submitCredit()">Credit</button> 
+        </div>
+    </div>
+

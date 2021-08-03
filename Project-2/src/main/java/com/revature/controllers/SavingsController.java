@@ -284,7 +284,7 @@ public class SavingsController {
 				int customerzip = 0;
 				String savingstransdate = "DateTest";
 				Integer savingstranstype = 2;
-				String savingstransdescription = "Checking To Savings";
+				String savingstransdescription = "Savings to Credit Card";
 				
 				for (Savings savings: savingsList)
 				{
@@ -333,7 +333,7 @@ public class SavingsController {
 
 				String creditcardstransdate = "DateTest";
 				Integer creditcardstranstype = 2;
-				String creditcardstransdescription = "From Checking";
+				String creditcardstransdescription = "From Savings";
 				Double creditcardsTransTotal = 0.0;
 				
 				for (CreditCards creditcards: creditcardsList)
@@ -357,8 +357,8 @@ public class SavingsController {
 						//					customerzip = savings.getCustomers().getCustomerzip();
 					}
 				}
-				
-				creditcardsTransTotal += AmountDTOamount;
+				//Minus the total
+				creditcardsTransTotal -= AmountDTOamount;
 				
 				System.out.println(creditcardsTransTotal);
 
