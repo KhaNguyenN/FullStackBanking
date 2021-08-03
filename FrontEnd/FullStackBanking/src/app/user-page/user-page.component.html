@@ -2,7 +2,7 @@
 <body style="background-color:#4b47472f; color: white;"></body>
 
     <div class="container" id="fullcontainer">
-        <h1>Transaction</h1>
+        <h1>Checkings</h1>
         <div id="table-row" class="row">
             
             
@@ -12,7 +12,7 @@
                 <!--only to be added after adding login functionality in back end-->
                 <div id="table-row" class="row">
                 <!--Then we need rows inside the container to organize it-->
-                    <table id="reimbursementTable" class="table table-hover table-bordered">
+                    <table id="checkingsTable" class="table table-hover table-bordered">
                         <thead>
                             <tr>
                                 <th>Checking ID</th>
@@ -25,14 +25,25 @@
                                
                             </tr>
                         </thead>
-                        <tbody id="reimbursementsBody">
+                        <tbody id="checkingsBody">
                             <!--We're going to leave the table body blank!-->
                         </tbody>
+
                     </table>
                 </div>
 
             <button id="showTransactions"  class="btn btn-dark"  (click) = "showTransactions()">Show Transaction</button>  
-            
+            <br>
+            <br>
+            <div>
+            <h4>Transfer</h4>
+                        <label for="amount" >Amount</label>
+                        <input id="amount" [(ngModel)] =" entered_amount" type="number" placeholder="Amount" class="col-lg-15 form-control">
+                        
+                        <button id="loginButton"  class="btn btn-dark"  (click) = "submitChecking()">Transfer to Checkings</button>  
+                        <button id="loginButton"  class="btn btn-dark"  (click) = "submitCredit()">Transfer to Credit</button> 
+                    </div>
         </div>
+        
     </div>
 

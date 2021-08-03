@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserPageComponent implements OnInit {
 
+
+  today = new Date();
+  entered_amount: string = 'amount'
   constructor() { }
   userid = "1"
   ngOnInit(): void {
@@ -98,11 +101,52 @@ export class UserPageComponent implements OnInit {
 
 
             
-            document.getElementById("reimbursementsBody")!.appendChild(row)
+            document.getElementById("checkingsBody")!.appendChild(row)
         }
 
     }
 
 }
+async submitChecking() {
 
+  let url="http://localhost:8080/FullStack_Banking/";
+
+  let user = {
+    id: this.userid,
+    amount: this.entered_amount
+    
+  }
+  
+
+  let response = await fetch(url + "checkingToSavings", {
+
+    method: "POST",
+
+    body: JSON.stringify(user),
+   
+    credentials: "include"
+  });
 }
+
+async submitCredit() {
+
+  let url="http://localhost:8080/FullStack_Banking/";
+
+  let user = {
+    id: this.userid,
+    amount: this.entered_amount
+    
+  }
+  
+
+  let response = await fetch(url + "checkingToCredit", {
+
+    method: "POST",
+
+    body: JSON.stringify(user),
+   
+    credentials: "include"
+  });
+}
+}
+

@@ -1,1 +1,38 @@
-<p>credit works!</p>
+<!--Get users information via their information-->
+<body style="background-color:#4b47472f; color: white;"></body>
+
+    <div class="container" id="fullcontainer">
+        <h1>Credit Cards</h1>
+        <div id="table-row" class="row">
+            
+            
+            <div class="container" id="fullcontainer">
+                <!--We need a div called container to hold all the bootstrap stuff-->
+                <!--only to be added after adding login functionality in back end--> 
+                <!--only to be added after adding login functionality in back end-->
+                <div id="table-row" class="row">
+                <!--Then we need rows inside the container to organize it-->
+                    <table id="creditTable" class="table table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Credit ID</th>
+                                <th>Credit Transfer Date</th>
+                                <!--<th>Type</th> -->
+                                <th>Description</th>
+                                <th>Credit Amount</th>
+                                <th>Total</th>
+                                <!--<th>Custermer ID</th> -->
+                               
+                            </tr>
+                        </thead>
+                        <tbody id="creditBody">
+                            <!--We're going to leave the table body blank!-->
+                        </tbody>
+                    </table>
+                </div>
+
+            <button id="showCredit"  class="btn btn-dark"  (click) = "showCredit()">Show Credit</button>  
+            
+        </div>
+    </div>
+
