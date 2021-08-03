@@ -18,13 +18,13 @@ private SavingsDAO fDAO = new SavingsDAO();
 	
 	public Savings selectSavingsById(int id) {
 		return sDAO.selectSavingsById(id);
-		
+	}	
 	public Savings createSavings(Savings savings)
 	{
 		return savings;
 	}	
 		
 
-}
+
 
 }
