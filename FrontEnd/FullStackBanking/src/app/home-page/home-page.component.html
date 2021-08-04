@@ -1,6 +1,50 @@
-<div class="container">
-    
-</div>
+<style>
+  .section-container{
+    display: grid;
+  grid-row-gap: 50px;
+  grid-template-columns: auto auto;
+  margin-top: 135px;
+  }
+  .section-one{
+    background-color: #72a435;
+    width: 400px;
+    height: 250px;
+  text-align: center;
+  padding-left: 20px;
+    padding-right: 20px;
+  }
+  .section-two{
+    background-color: #72a435;
+    width: 600px;
+    height: 250px;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .service-h1{
+    text-align: center;
+    color: white;
+    margin-top: 137px;
+    word-spacing: 3px;
+   font-size: 2.35em;
+  }
+  .service-container{
+   margin-top: 100px;
+   
+  }
+  .section-3-container{
+    margin-top: 100px;
+  }
+  .home-h1, .home-p{
+    color: white;
+  }
+  .caption{
+    color: rgb(252, 252, 252);
+    text-align: center;
+    margin-top: 10px;
+  }
+</style>
+
 <div class="row">
     <div class="col-12">
         <video autoplay muted loop id="myVideo">
@@ -13,7 +57,7 @@
             <button id="myBtn" onclick="myFunction()">Pause</button>
           </div> -->
           
-          <script type="text/javascrip">
+          <script type="text/javascript">
           var video = document.getElementById("myVideo");
           var btn = document.getElementById("myBtn");
           
@@ -30,5 +74,59 @@
     
     
     </div>
+   
+</div>
+<section class="section-container">
+  <div class="section-one">
+    <h1 class="home-h1">By Group One</h1>
+    <p class="home-p">Fullstack Banking Application .</p>
+    <address>
+      <p class="home-p">200 Revature Ave  </p>
+      <p class="home-p">Washinton Dc  </p>
+      <p class="home-p">200 Revature Ave  </p>
+      <p class="home-p">44000</p>
+    </address>
+  </div>
+  <div class="section-two">
+   <h1 class="home-h1">Become a Member</h1>
+   <p>Welcome to our banking system. It is our pleasure serving you.If you have any question please contact us</p>
+  </div>
+</section>
+<h1 class="service-h1">Service We Provide</h1>
+<section class="service-container">
+<div class="row">
+  <div class="col md-3">
+ <img src="../../assets/card.jpg" alt="" class="img-thumbnail">
+ <p class="caption">Banking</p>
+  </div>
+  <div class="col md-3">
+    <img src="../../assets/build.jpg" alt="" class="img-thumbnail">
+    <p class="caption">Loan</p>
+  </div>
+  <div class="col md-3">
+    <img src="../../assets/credit.jpg" alt="" class="img-thumbnail">
+    <p class="caption">Credit</p>
+  </div>
+</div>
+</section>
+<div class="container">
+    
+<div class="section-3-container">
+
+
+<div class="row">
+  <div class="col-md-4">
+<img src="../../assets/banking.jpg" alt="" class="img-thumbnail">
+  </div>
+ 
+  <div class="col-md-8" style="background-color: #72a435; text-align: center;">
+   <h1 class="home-h1">We Proud Serving You!</h1>
+   <p>Banking with us is a pleasure.</p>
+  </div>
+</div>
+</div>
+</div>
+<div class="container">
+  <app-footer></app-footer>
 </div>
     

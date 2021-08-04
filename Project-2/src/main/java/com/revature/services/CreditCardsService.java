@@ -20,6 +20,12 @@ private CreditCardsDAO fDAO = new CreditCardsDAO();
 	
 	public CreditCards selectCreditCardsById(int id) {
 		return cDAO.selectCreditCardsById(id);
+		
+//		public CreditCards createCreditCards creditcards)
+//		{
+//			return creditcards;
+//		}	
+	//	
 
 }
 

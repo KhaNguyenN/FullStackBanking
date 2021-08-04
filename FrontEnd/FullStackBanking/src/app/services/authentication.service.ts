@@ -8,8 +8,8 @@ export class AuthenticationService {
   constructor() { }
 
   authenticate(username: any, password: any ) {
-    if (username === "username" && password === "password") {
-      sessionStorage.setItem('username', username)
+    if (username === "Greglogin" && password === "password1") {
+      sessionStorage.setItem('Greglogin', username)
       return true;
     } else {
       return false;
@@ -17,12 +17,12 @@ export class AuthenticationService {
   }
 
   isUserLoggedIn() {
-    let user = sessionStorage.getItem('username')
+    let user = sessionStorage.getItem('Greglogin')
     console.log(!(user === null))
     return !(user === null)
   }
 
   logOut() {
-    sessionStorage.removeItem('username')
+    sessionStorage.removeItem('Greglogin')
   }
 }

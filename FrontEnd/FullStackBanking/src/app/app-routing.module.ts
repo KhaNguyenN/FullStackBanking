@@ -1,6 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CheckingComponent } from './checking/checking.component';
+
 
 import { CreditComponent } from './credit/credit.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -15,7 +15,6 @@ import { UserPageComponent } from './user-page/user-page.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'checking', component: CheckingComponent, canActivate:[AuthGuardService] },
   { path: 'credit', component: CreditComponent, canActivate:[AuthGuardService] },
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent, canActivate:[AuthGuardService]},
