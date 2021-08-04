@@ -11,7 +11,6 @@ public class CustomersDAO implements CustomersInterface{
 	
 	//Shows all of the information on the Customers table
 	public List<Customers> findAllCustomers(){
-		
 		Session ses = HibernateUtil.getSession();
 		
 		List<Customers> customerList = ses.createQuery("FROM Customers").list();
@@ -22,7 +21,6 @@ public class CustomersDAO implements CustomersInterface{
 	}
 	
 	public void addCustomer(Customers customer) {
-		
 		Session ses = HibernateUtil.getSession();
 		
 		ses.save(customer);
@@ -32,7 +30,6 @@ public class CustomersDAO implements CustomersInterface{
 	}
 	
 	public void updateCustomer(Customers customer) {
-		
 		Session ses = HibernateUtil.getSession();
 		
 		ses.merge(customer);

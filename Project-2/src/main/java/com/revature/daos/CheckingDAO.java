@@ -44,11 +44,4 @@ public class CheckingDAO {
 		//That's the whole insert method!!!
 		//DAO methods are significantly cleaner with Hibernate than JDBC
 	}
-	
-
-//	public Checking selectCheckingById(int id) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-	
 }

@@ -33,12 +33,11 @@ public class MasterServlet extends HttpServlet {
 		//thus, by default, we'll set the status code to 404, and change it in our code upon success.
 		res.setStatus(404);
 		
-		
 		//Now we want to write some code that will determine where requests get sent.
 		
 		String URI = req.getRequestURI().replace("/FullStack_Banking/", "");
 		//getting the request URI, and stripping out the base URL
-		//so we'll just be left with the endpoint (e.g. "avengers", "login") to use in a switch
+		//so we'll just be left with the endpoint (e.g. "selectCheckingById", "login") to use in a switch
 		
 		switch(URI) {
 		
@@ -127,12 +126,6 @@ public class MasterServlet extends HttpServlet {
 		
 		case "showChecking": //Use showCheckingByID instead
 			checkingcontroller.findAllChecking(res);
-			break;
-		
-		case "showSavings":
-			break;
-			
-		case "showCreditCards":
 			break;
 		}
 	}

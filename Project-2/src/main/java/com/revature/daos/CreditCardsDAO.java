@@ -31,6 +31,4 @@ public class CreditCardsDAO {
 			
 			return creditcards; //remember, return ends the method, so we close the Session, then return
 		}
-		
-		
 }

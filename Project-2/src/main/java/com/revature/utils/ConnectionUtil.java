@@ -10,11 +10,7 @@ import java.sql.SQLException;
 //It will have a method called getConnection() that will return a Connection object
 //We will need these Connection object in our DAO layer to interact with our database
 public class ConnectionUtil {
-
-	
-	
 	public static void main(String[] args) {
-			
 			//here we're just testing whether our connection (from the ConnectionUtil Class) is successful
 			//remember - the getConnection() method will return a Connection object if you successfully reach the database
 			try(Connection conn = ConnectionUtil.getConnection()) {
@@ -23,10 +19,7 @@ public class ConnectionUtil {
 				System.out.println("No Connection");
 				e.printStackTrace();
 			}
-			
-			
 	}
-	
 	
 	//a method called getConnection that returns a Connection object
 	public static Connection getConnection() throws SQLException {
@@ -40,13 +33,10 @@ public class ConnectionUtil {
 		}
 		
 		
-		//We need to provide our database credentials
-	
 		//String url = "jdbc:postgresql://javafs210601.c9hxbolytvxu.us-east-2.rds.amazonaws.com:5432/postgres?currentSchema=Bank";
         //String username = "postgres"; 
         //String password = "password"; //this will be whatever password you set in postgres (or RDS if you're using that)
 									  //hopefully you just left it as password...
-		
 		//I've successfully hidden my DB credentials in my environment variables 
 		//run -> run configurations -> environment -> add the environment variable key/pairs you want
 		String url = System.getenv("url");
