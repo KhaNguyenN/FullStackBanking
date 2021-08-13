@@ -32,7 +32,6 @@ public class CreditCardsDAO {
 			
 			return creditcards; //remember, return ends the method, so we close the Session, then return
 		}
-		
 		public void insertCreditCards(CreditCards creditcards) {
 			
 			//Open a Session object so that we can connect to the database
@@ -45,5 +44,4 @@ public class CreditCardsDAO {
 			//That's the whole insert method!!!
 			//DAO methods are significantly cleaner with Hibernate than JDBC
 		}
-		
 }

@@ -75,17 +75,7 @@ public class CreditCardsController {
 		//String json = om.writeValueAsString(checkingList); //turn that List in a JSON String	
 		//res.getWriter().print(json); //put the JSON into the response object (res)
 		//res.setStatus(200); //override the default 404 status code that we set in the MasterServlet
-	
-	
-
 }
-
-
-
-
-
-
-
 
 
 //private CreditCardsService as = new CreditCardsService();

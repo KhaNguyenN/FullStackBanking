@@ -18,6 +18,8 @@ public class Launcher {
 	
 	public static void main(String[] args) {
 		
+		//TESTING FOR JAVA APPLICATION
+		//----------------------------
 		
 		//Shows all of the information on the Checking table
 		List<Checking> checkingList = checkingDAO.findAllChecking();

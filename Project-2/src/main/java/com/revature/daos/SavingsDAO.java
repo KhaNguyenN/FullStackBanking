@@ -27,7 +27,6 @@ public class SavingsDAO {
 		//here we're saying "Create a new Author object by getting the Author from the DB that has this id"
 		
 		HibernateUtil.closeSession();
-		
 		return savings; //remember, return ends the method, so we close the Session, then return
 	}
 	

@@ -67,15 +67,8 @@ public class CustomersController {
 //				"customerstate": "NY",
 //				"customerzip": "12345"
 //			}
-			
-			
-			
-			
 			res.setStatus(201);
 			res.getWriter().print("Add worked");
-			
 		} 
-
 	}
-
 }
