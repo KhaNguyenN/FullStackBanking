@@ -6,23 +6,22 @@ import { Injectable } from '@angular/core';
 export class AuthenticationService {
 
   constructor() { }
-
+//removed if username === and password === cause the backend already authenticate
+//will now store the session
   authenticate(username: any, password: any ) {
-    if (username === "Greglogin" && password === "password1") {
-      sessionStorage.setItem('Greglogin', username)
+      console.log("In authenticate")
+      sessionStorage.setItem('username', username)
       return true;
-    } else {
-      return false;
-    }
+    
   }
-
+//checked if the user is logged in
   isUserLoggedIn() {
-    let user = sessionStorage.getItem('Greglogin')
+    let user = sessionStorage.getItem('username')
     console.log(!(user === null))
     return !(user === null)
   }
-
+//removed the session where the user is logged in
   logOut() {
-    sessionStorage.removeItem('Greglogin')
+    sessionStorage.removeItem('username')
   }
 }
